@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Donate | Kindness In Action UK</title>
+<meta name="description" content="Give a one-off or monthly gift to Kindness In Action UK, registered charity 1219528. Sponsor a winter bag for £40. Gift Aid adds 25p for every £1.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://kiauk.org/donate.html">
+<meta name="theme-color" content="#43133F">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/figtree-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/figtree-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Kindness In Action UK, home">
+      <img src="img/logo-mark.png" width="191" height="210" alt="">
+      <span class="brand-name">Kindness In Action <span>UK</span></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="/#about">About us</a>
+      <a href="/#how">What we do</a>
+      <a href="/#impact">Our impact</a>
+      <a href="/#involved">Get involved</a>
+    </nav>
+    <a class="btn btn--accent" href="/donate.html">Donate</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap page-head">
+    <h1>Give to Kindness In Action UK</h1>
+    <p class="lede">Every week our volunteers serve hot food, clothing and practical help to 95 to 100 people in Central London. Your gift keeps that going.</p>
+  </div>
+
+  <div class="wrap donate-grid">
+    <div>
+      <div class="notice notice--error" id="form-error" role="alert" hidden></div>
+      <div class="notice" id="cancelled" hidden>Your payment was cancelled and you have not been charged. You can try again below.</div>
+      <noscript><div class="notice notice--error">This form needs JavaScript. To give another way, email <a href="mailto:contact@kiauk.org">contact@kiauk.org</a>.</div></noscript>
+
+      <form class="form-card" id="donate-form" novalidate>
+        <fieldset>
+          <legend>How often?</legend>
+          <div class="chips chips--wide" id="freq-chips">
+            <div class="chip"><input type="radio" name="frequency" id="freq-one_off" value="one_off" checked><label for="freq-one_off">One-off</label></div>
+            <div class="chip"><input type="radio" name="frequency" id="freq-monthly" value="monthly"><label for="freq-monthly">Monthly</label></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend id="amount-legend">Choose an amount</legend>
+          <div class="chips" id="amount-chips" role="radiogroup" aria-labelledby="amount-legend"></div>
+          <div class="other-amount" id="other-wrap" hidden>
+            <span aria-hidden="true">£</span>
+            <div class="field" style="margin:0;flex:1;max-width:200px">
+              <label for="other-amount" class="visually-label" style="position:absolute;left:-9999px">Amount in pounds</label>
+              <input type="text" inputmode="decimal" id="other-amount" autocomplete="off" placeholder="Amount" aria-describedby="amount-err">
+            </div>
+          </div>
+          <div class="field" style="margin:8px 0 0"><div class="err" id="amount-err" role="alert"></div></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Giving as</legend>
+          <div class="chips chips--wide" id="type-chips">
+            <div class="chip"><input type="radio" name="donor_type" id="type-individual" value="individual" checked><label for="type-individual">Individual</label></div>
+            <div class="chip"><input type="radio" name="donor_type" id="type-business" value="business"><label for="type-business">Business or organisation</label></div>
+          </div>
+          <p id="type-note" class="hint" style="font-size:14px;margin-top:12px">Sole traders and partners giving from their own money should choose Individual.</p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your details</legend>
+          <div class="field" id="business-field" hidden>
+            <label for="business_name">Business or organisation name</label>
+            <input type="text" id="business_name" name="business_name" autocomplete="organization" maxlength="160">
+            <div class="err" id="business_name-err"></div>
+          </div>
+          <div class="row2">
+            <div class="field">
+              <label for="first_name" id="first-label">First name</label>
+              <input type="text" id="first_name" name="first_name" autocomplete="given-name" maxlength="80">
+              <div class="err" id="first_name-err"></div>
+            </div>
+            <div class="field">
+              <label for="last_name" id="last-label">Last name</label>
+              <input type="text" id="last_name" name="last_name" autocomplete="family-name" maxlength="80">
+              <div class="err" id="last_name-err"></div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Email address <span class="hint">for your receipt</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" maxlength="200">
+            <div class="err" id="email-err"></div>
+          </div>
+          <div class="check" id="naming-check" hidden>
+            <input type="checkbox" id="public_naming_ok" name="public_naming_ok">
+            <label for="public_naming_ok">You may thank us by name on your website and social media.</label>
+          </div>
+        </fieldset>
+
+        <div class="giftaid-box" id="giftaid-box">
+          <h3>Add Gift Aid. It costs you nothing.</h3>
+          <p>If you are a UK taxpayer, Gift Aid lets the charity claim an extra 25p for every £1 you give.</p>
+          <div class="check" style="margin-top:14px">
+            <input type="checkbox" id="gift_aid" name="gift_aid">
+            <label for="gift_aid">Yes, I would like to Gift Aid my donation</label>
+          </div>
+          <p id="giftaid-wording">I want to Gift Aid my donation and any donations I make in the future or have made in the past 4 years to Kindness In Action UK. I am a UK taxpayer and understand that if I pay less Income Tax and/or Capital Gains Tax in the current tax year than the amount of Gift Aid claimed on all my donations it is my responsibility to pay any difference.</p>
+          <p class="fine">Council Tax and VAT do not qualify. Please tell us if you want to cancel this declaration, change your name or home address, or no longer pay enough tax. Email <a href="mailto:contact@kiauk.org">contact@kiauk.org</a>.</p>
+          <div class="giftaid-address" id="giftaid-address" hidden style="margin-top:16px">
+            <div class="row2">
+              <div class="field">
+                <label for="house_name_or_number">House name or number</label>
+                <input type="text" id="house_name_or_number" name="house_name_or_number" autocomplete="off" maxlength="80">
+                <div class="err" id="house_name_or_number-err"></div>
+              </div>
+              <div class="field">
+                <label for="postcode">Postcode</label>
+                <input type="text" id="postcode" name="postcode" autocomplete="postal-code" maxlength="12">
+                <div class="err" id="postcode-err"></div>
+              </div>
+            </div>
+            <div class="row2">
+              <div class="field">
+                <label for="address_line_1">Street <span class="hint">optional</span></label>
+                <input type="text" id="address_line_1" name="address_line_1" autocomplete="address-line1" maxlength="120">
+              </div>
+              <div class="field">
+                <label for="town">Town or city <span class="hint">optional</span></label>
+                <input type="text" id="town" name="town" autocomplete="address-level2" maxlength="80">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="check">
+          <input type="checkbox" id="marketing_consent" name="marketing_consent">
+          <label for="marketing_consent">Email me occasional updates about the charity's work. You can unsubscribe at any time.</label>
+        </div>
+
+        <div class="hp" aria-hidden="true">
+          <label for="website">Leave this field empty</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="summary" id="summary" aria-live="polite"></div>
+        <button class="btn btn--accent submit" type="submit" id="submit">Continue to secure payment</button>
+        <p class="secure">You will pay on Stripe's secure page by card, Apple Pay or Google Pay. We never see your card details. By continuing you agree to our <a href="/terms.html">donation terms</a>. See our <a href="/privacy.html">privacy policy</a> for how we use your details.</p>
+      </form>
+    </div>
+
+    <aside>
+      <div class="aside-card">
+        <p style="font-weight:700;color:var(--white);margin-bottom:10px">Winter Bag Appeal 2026</p>
+        <div class="big">£40</div>
+        <h2 style="margin-bottom:12px">sponsors one winter bag</h2>
+        <p>Each bag holds 19 winter essentials, including outerwear and waterproofs, thermal layers and toiletries. We want to fill 600 bags this winter.</p>
+        <p>Bags are handed out in person from mid-December, at our own outreach and through partner outreach programmes in London and Liverpool.</p>
+        <p class="aside-note">For a business gift of 10, 25 or 50 bags, choose a one-off gift of £400, £1,000 or £2,000, or email <a href="mailto:contact@kiauk.org" style="color:var(--cyan)">contact@kiauk.org</a>.</p>
+      </div>
+      <p class="aside-note" style="margin-top:20px">Kindness In Action UK is a registered charity, number 1219528.</p>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer dark" id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="img/logo-reversed.png" width="384" height="242" alt="Kindness In Action UK. Practical help, human dignity, lasting commitment.">
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <address>
+          <a href="mailto:contact@kiauk.org" style="text-decoration:underline">contact@kiauk.org</a><br>
+          Honeypot Business Centre<br>
+          Unit 10, Parr Road<br>
+          Stanmore HA7 1NL
+        </address>
+      </div>
+      <div>
+        <h2>More</h2>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/donate.html">Donate</a></li>
+          <li><a href="/privacy.html">Privacy policy</a></li>
+          <li><a href="/terms.html">Donation terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal" style="margin:0">Kindness In Action UK is a registered charity, number 1219528.</p>
+  </div>
+</footer>
+
+<script src="donate.js" defer></script>
+</body>
+</html>
