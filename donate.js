@@ -10,15 +10,14 @@
   var AMOUNTS = {
     one_off: [
       { pence: 4000, label: "£40", sub: "1 bag" },
-      { pence: 8000, label: "£80", sub: "2 bags" },
-      { pence: 20000, label: "£200", sub: "5 bags" },
-      { pence: 40000, label: "£400", sub: "10 bags" }
+      { pence: 40000, label: "£400", sub: "10 bags" },
+      { pence: 100000, label: "£1,000", sub: "25 bags" },
+      { pence: 200000, label: "£2,000", sub: "50 bags" }
     ],
     monthly: [
       { pence: 500, label: "£5", sub: "a month" },
       { pence: 1000, label: "£10", sub: "a month" },
-      { pence: 2000, label: "£20", sub: "a month" },
-      { pence: 4000, label: "£40", sub: "a month" }
+      { pence: 2000, label: "£20", sub: "a month" }
     ]
   };
 
