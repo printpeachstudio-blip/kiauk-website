@@ -280,3 +280,10 @@ strong{color:var(--ink)}
 
 /* Make the hidden attribute always win over component display rules */
 [hidden]{display:none !important}
+
+/* Bag counter */
+.bag-progress{margin:18px 0 4px}
+.bag-bar{height:12px;border-radius:6px;background:rgba(255,255,255,.22);overflow:hidden}
+.bag-fill{display:block;height:100%;width:0;background:var(--cyan);border-radius:6px;transition:width .6s ease}
+.bag-text{margin:10px 0 0;font-weight:700;font-size:15px;color:var(--white)}
+@media (prefers-reduced-motion:reduce){.bag-fill{transition:none}}

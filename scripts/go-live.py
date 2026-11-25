@@ -55,6 +55,10 @@ appeal = '''  <section class="sec sec--purple dark" id="appeal" aria-labelledby=
       <div>
         <p class="lead-stat" style="margin-bottom:8px;color:var(--cyan)">£40</p>
         <p class="lead-label">sponsors one complete winter bag. Gift Aid adds 25p for every £1 if you are a UK taxpayer.</p>
+        <div class="bag-progress" data-bag-progress hidden style="max-width:360px">
+          <div class="bag-bar" role="progressbar" aria-label="Winter bags sponsored" aria-valuemin="0" aria-valuemax="600" aria-valuenow="0"><span class="bag-fill"></span></div>
+          <p class="bag-text"></p>
+        </div>
       </div>
     </div>
   </section>
@@ -62,6 +66,7 @@ appeal = '''  <section class="sec sec--purple dark" id="appeal" aria-labelledby=
 '''
 s = swap(s, '  <section class="sec" id="involved"', appeal + '  <section class="sec" id="involved"', "appeal section")
 s = swap(s, "<h2>On this page</h2>", "<h2>More</h2>", "footer heading")
+s = swap(s, "</body>", '<script src="bags.js" defer></script>\n</body>', "bag counter script")
 s = swap(s, '          <li><a href="#involved">Get involved</a></li>\n        </ul>',
          '          <li><a href="#involved">Get involved</a></li>\n          <li><a href="/donate.html">Donate</a></li>\n          <li><a href="/privacy.html">Privacy policy</a></li>\n          <li><a href="/terms.html">Donation terms</a></li>\n        </ul>', "footer links")
 write("index.html", s)

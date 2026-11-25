@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { validatePayload, buildCheckoutParams, normalisePostcode, GIFT_AID_WORDING, corsHeaders } from "../supabase/functions/create-checkout/lib.ts";
 import { verifyStripeSignature, hmacSha256Hex, handleEvent } from "../supabase/functions/stripe-webhook/lib.ts";
 import type { Db, Donation, Find } from "../supabase/functions/stripe-webhook/lib.ts";
+import { bagsFromPence, buildCountResponse } from "../supabase/functions/bag-count/lib.ts";
 import { readFileSync } from "node:fs";
 
 const base = {
@@ -191,4 +192,11 @@ test("refunded rows are not flipped back to paid by a replayed checkout event", 
 });
 test("unrelated events ignored", async () => {
   assert.equal(await handleEvent(ev("customer.created", {}), memDb([]), T), "ignored");
+});
+
+test("bag count: one bag per full £40 of each paid one-off gift", () => {
+  assert.equal(bagsFromPence([]), 0);
+  assert.equal(bagsFromPence([4000, 8000, 5000, 3999, 100000]), 1 + 2 + 1 + 0 + 25);
+  assert.equal(bagsFromPence([NaN, -5, 0]), 0);
+  assert.deepEqual(buildCountResponse([4000, 40000]), { sponsored: 11, target: 600 });
 });

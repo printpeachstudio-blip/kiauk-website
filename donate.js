@@ -15,9 +15,9 @@
       { pence: 200000, label: "£2,000", sub: "50 bags" }
     ],
     monthly: [
-      { pence: 500, label: "£5", sub: "a month" },
       { pence: 1000, label: "£10", sub: "a month" },
-      { pence: 2000, label: "£20", sub: "a month" }
+      { pence: 2000, label: "£20", sub: "a month" },
+      { pence: 4000, label: "£40", sub: "a month" }
     ]
   };
 
@@ -235,7 +235,7 @@
     if (e.target.name !== "frequency") return;
     state.frequency = e.target.value;
     state.other = false;
-    state.selected = AMOUNTS[state.frequency][state.frequency === "monthly" ? 1 : 0].pence;
+    state.selected = AMOUNTS[state.frequency][0].pence;
     renderChips();
     updateSummary();
   });
